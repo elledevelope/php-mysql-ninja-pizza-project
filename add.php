@@ -4,12 +4,21 @@
 // ------------------------------------------ GET Method (data is shown in URL):
 
 //Function to check if a form was submitted /  if  a'submit' btn have been pressed :
-if(isset($_GET['submit'])) { //if $_GET['submit'] is not set(=empty = in this case - if a form was not send yet(no data was send)/the btn 'submit' was not pressed) then, when the btn is pressed we echo data from a form:
-echo $_GET['email'] . '<br>';
-echo $_GET['title'] . '<br>';
-echo $_GET['ingredients'] . '<br>';
+if (isset($_GET['submit'])) { //if $_GET['submit'] is not set(=empty = in this case - if a form was not send yet(no data was send)/the btn 'submit' was not pressed) then, when the btn is pressed we echo data from a form:
+    echo $_GET['email'] . '<br>';
+    echo $_GET['title'] . '<br>';
+    echo $_GET['ingredients'] . '<br>';
 };
 
+
+
+// ------------------------------------------ POST Method (data is NOT shown in URL, data is send straightly to a server): 
+// -------------------------------------------POST Method is more secure 
+if (isset($_POST['submit'])) {
+    echo $_POST['email'] . '<br>';
+    echo $_POST['title'] . '<br>';
+    echo $_POST['ingredients'] . '<br>';
+};
 
 ?>
 
@@ -24,7 +33,7 @@ echo $_GET['ingredients'] . '<br>';
 
     <h4 class="center">Add a Pizza</h4>
 
-    <form class="white" action="add.php" method="GET">
+    <form class="white" action="add.php" method="POST">
         <label>Your Email:</label>
         <input type="text" name="email">
 
