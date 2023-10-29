@@ -1,5 +1,16 @@
 <?php
 
+
+// ------------------------------------------ GET Method:
+
+//Function to check if a form was submitted /  if  a'submit' btn have been pressed :
+if(isset($_GET['submit'])) { //if $_GET['submit'] is not set(=empty = in this case - if a form was not send yet(no data was send)/the btn 'submit' was not pressed) then, when the btn is pressed we echo data from a form:
+echo $_GET['email'] . '<br>';
+echo $_GET['title'] . '<br>';
+echo $_GET['ingredients'] . '<br>';
+};
+
+
 ?>
 
 
