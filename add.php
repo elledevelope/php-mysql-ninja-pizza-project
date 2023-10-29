@@ -15,10 +15,13 @@ if (isset($_GET['submit'])) { //if $_GET['submit'] is not set(=empty = in this c
 // ------------------------------------------ POST Method (data is NOT shown in URL, data is send straightly to a server): 
 // -------------------------------------------POST Method is more secure 
 if (isset($_POST['submit'])) {
-    echo $_POST['email'] . '<br>';
-    echo $_POST['title'] . '<br>';
-    echo $_POST['ingredients'] . '<br>';
+    // !!!!! IMPORTANT : always have to use //-- htmlspecialchars() --// to prevent Cross Site Scripting (XSS) Attaks (in this case via a form method POST ) !!!!!
+    echo htmlspecialchars($_POST['email']) . '<br>';
+    echo htmlspecialchars($_POST['title']) . '<br>';
+    echo htmlspecialchars($_POST['ingredients']) . '<br>';
 };
+
+
 
 ?>
 
