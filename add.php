@@ -16,9 +16,31 @@ if (isset($_GET['submit'])) { //if $_GET['submit'] is not set(=empty = in this c
 // -------------------------------------------POST Method is more secure 
 if (isset($_POST['submit'])) {
     // !!!!! IMPORTANT : always have to use //-- htmlspecialchars() --// to prevent Cross Site Scripting (XSS) Attaks (in this case via a form method POST ) !!!!!
-    echo htmlspecialchars($_POST['email']) . '<br>';
-    echo htmlspecialchars($_POST['title']) . '<br>';
-    echo htmlspecialchars($_POST['ingredients']) . '<br>';
+
+    // echo htmlspecialchars($_POST['email']) . '<br>';
+    // echo htmlspecialchars($_POST['title']) . '<br>';
+    // echo htmlspecialchars($_POST['ingredients']) . '<br>';
+
+    // checking if email field is empty:
+    if (empty($_POST['email'])) {
+        echo 'An email is required <br>'; //so if 'email' is empty we show error msg
+    } else {
+        echo htmlspecialchars($_POST['email']) . '<br>'; // if 'email' is filled the data is send to a server (in this case : echoed)
+    };
+
+    // checking if title field is empty:
+    if (empty($_POST['title'])) {
+        echo 'A title is required <br>'; 
+    } else {
+        echo htmlspecialchars($_POST['title']) . '<br>'; 
+    };
+
+    // checking if ingredient field is empty:
+    if (empty($_POST['ingredient'])) {
+        echo 'At least one ingredient is required <br>'; 
+    } else {
+        echo htmlspecialchars($_POST['ingredient']) . '<br>';
+    };
 };
 
 
