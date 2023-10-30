@@ -1,5 +1,5 @@
 <?php
-
+//we initilaze variables to use them later in <input "value = $..."> to keep data in forl fiels after subbmitting a form if there is an error:
 $email = $title = $ingredients = ''; //$email, $title, and $ingredients are being simultaneously initialized to empty strings
 
 //creating a variable $errors - associative array with empty values (those will be filled when we call $errors['....'] in IF)
@@ -63,11 +63,11 @@ if (isset($_POST['submit'])) {
 
     <form class="white" action="add.php" method="POST">
         <label>Your Email:</label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>"> <!-- //added $email to value of input to keep data in a filed after a form submition if here is an error so a user can modifie this data rather than typing it out again -->
         <div class="red-text"><?php echo $errors['email'] ?></div> <!-- //echoed $errors['email'] in html -->
 
         <label>Pizza Title:</label>
-        <input type="text" name="title">
+        <input type="text" name="title" value="<?php echo htmlspecialchars($title) ?>">
         <div class="red-text"><?php echo $errors['title'] ?></div>
 
         <label>Ingredients (comma separated)</label>
