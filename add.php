@@ -1,15 +1,5 @@
 <?php
-
-
-// ------------------------------------------ GET Method (data is shown in URL):
-
-//Function to check if a form was submitted /  if  a'submit' btn have been pressed :
-if (isset($_GET['submit'])) {
-    echo $_GET['email'] . '<br>';
-    echo $_GET['title'] . '<br>';
-    echo $_GET['ingredients'] . '<br>';
-};
-
+$email = $title = $ingredients = ''; //$email, $title, and $ingredients are being simultaneously initialized to empty strings
 
 
 // ------------------------------------------ POST Method (data is NOT shown in URL, data is send straightly to a server): 
@@ -44,10 +34,10 @@ if (isset($_POST['submit'])) {
     };
 
     // checking if ingredient field is empty:
-    if (empty($_POST['ingredient'])) {
+    if (empty($_POST['ingredients'])) {
         echo 'At least one ingredient is required <br>';
     } else {
-        $ingredient = $_POST['ingredient'];
+        $ingredients = $_POST['ingredients'];
         if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){ //Regular Expression (RegEx)
             echo 'Ingredients must be a comma separated list';
         };
