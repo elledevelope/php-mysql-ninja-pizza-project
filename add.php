@@ -25,19 +25,22 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['email'])) {
         echo 'An email is required <br>'; //so if 'email' is empty we show error msg
     } else {
-        echo htmlspecialchars($_POST['email']) . '<br>'; // if 'email' is filled the data is send to a server (in this case : echoed)
+        $email = $_POST['email'];
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //we filter email and if it do don't pass the filter (usung ! here we inverse true to false) we pring an error:
+            echo 'email must be a valid email adress'; 
+        };
     };
 
     // checking if title field is empty:
     if (empty($_POST['title'])) {
-        echo 'A title is required <br>'; 
+        echo 'A title is required <br>';
     } else {
-        echo htmlspecialchars($_POST['title']) . '<br>'; 
+        $title = $_POST['title'];
     };
 
     // checking if ingredient field is empty:
     if (empty($_POST['ingredient'])) {
-        echo 'At least one ingredient is required <br>'; 
+        echo 'At least one ingredient is required <br>';
     } else {
         echo htmlspecialchars($_POST['ingredient']) . '<br>';
     };
