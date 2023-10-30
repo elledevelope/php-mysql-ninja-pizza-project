@@ -1,10 +1,12 @@
 <?php
 
+$email = $title = $ingredients = ''; //$email, $title, and $ingredients are being simultaneously initialized to empty strings
+
 //creating a variable $errors - associative array with empty values (those will be filled when we call $errors['....'] in IF)
 $errors = [
- 'email' => '',
- 'title' => '',
- 'ingredient' => '',
+    'email' => '',
+    'title' => '',
+    'ingredients' => '',
 ];
 
 
@@ -17,29 +19,29 @@ if (isset($_POST['submit'])) {
     } else {
         //filter an email
         $email = $_POST['email'];
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'email must be a valid email adress'; //here we call $errors['email'] and atribute a value of a error-text
         };
     };
 
     // checking if title field is empty:
-    if (empty($_POST['title'])) { 
+    if (empty($_POST['title'])) {
         $errors['title'] = 'A title is required <br>';
     } else {
         //filter title
         $title = $_POST['title'];
-        if (!preg_match('/^[a-zA-Z\s]+$/', $title)) { 
+        if (!preg_match('/^[a-zA-Z\s]+$/', $title)) {
             $errors['title'] = 'Title must be letters and spaces only';
         };
     };
 
     // checking if ingredient field is empty:
-    if (empty($_POST['ingredient'])) {
-        $errors['ingridient'] = 'At least one ingredient is required <br>';
+    if (empty($_POST['ingredients'])) {
+        $errors['ingredients'] = 'At least one ingredient is required <br />';
     } else {
-        $ingredient = $_POST['ingredient'];
-        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){ //Regular Expression (RegEx)
-            $errors['ingridient'] = 'Ingredients must be a comma separated list';
+        $ingredients = $_POST['ingredients'];
+        if (!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)) {
+            $errors['ingredients'] = 'Ingredients must be a comma separated list';
         };
     };
 };
@@ -62,12 +64,15 @@ if (isset($_POST['submit'])) {
     <form class="white" action="add.php" method="POST">
         <label>Your Email:</label>
         <input type="text" name="email">
+        <div class="red-text"><?php echo $errors['email'] ?></div> <!-- //echoed $errors['email'] in html -->
 
         <label>Pizza Title:</label>
         <input type="text" name="title">
+        <div class="red-text"><?php echo $errors['title'] ?></div>
 
-        <label>Ingredients (comma separeted):</label>
-        <input type="text" name="ingredients">
+        <label>Ingredients (comma separated)</label>
+        <input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients) ?>">
+			<div class="red-text"><?php echo $errors['ingredients']; ?></div>
 
         <div class="center">
             <input class="btn brand z-depth-0" type="submit" name="submit" value="submit">
