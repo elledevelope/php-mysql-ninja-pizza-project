@@ -1,6 +1,4 @@
 <?php
-$email = $title = $ingredients = ''; //$email, $title, and $ingredients are being simultaneously initialized to empty strings
-
 
 // ------------------------------------------ POST Method (data is NOT shown in URL, data is send straightly to a server): 
 // -------------------------------------------POST Method is more secure 
