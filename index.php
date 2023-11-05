@@ -21,6 +21,7 @@ mysqli_close($conn);
 
 
 // print_r($pizzas);
+// print_r(explode(',' , $pizzas[0]['ingredients']));
 
 ?>
 
@@ -34,21 +35,31 @@ mysqli_close($conn);
 
 <div class="container">
     <div class="row">
-            <?php foreach($pizzas as $pizza){ ?>
+        <?php foreach ($pizzas as $pizza) { ?>
 
-                <div class="col s6 md3">
-                    <div class="card z-depth-0">
-                        <div class="card-content center">
-                            <h6><?php echo htmlentities($pizza['title']); ?></h6>
-                            <div><?php echo htmlentities($pizza['ingredients']); ?></div>
-                        </div>
-                        <div class="card-action">
-                            <a href="#" class="brand-text">more info</a>
-                        </div>
+            <div class="col s6 md3">
+                <div class="card z-depth-0">
+                    <div class="card-content center">
+                        <h6><?php echo htmlentities($pizza['title']); ?></h6>
+
+                        <ul>
+                            <?php foreach (explode(',', $pizza['ingredients']) as $ingredient) { ?>
+
+                                <li><?php echo htmlentities($ingredient); ?></li>
+
+                            <?php }; ?>
+                        </ul>
+
+
+
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="brand-text">more info</a>
                     </div>
                 </div>
+            </div>
 
-            <?php }; ?> 
+        <?php }; ?>
 
     </div>
 </div>
