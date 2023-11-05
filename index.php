@@ -35,7 +35,8 @@ mysqli_close($conn);
 
 <div class="container">
     <div class="row">
-        <?php foreach ($pizzas as $pizza) { ?>
+        <?php foreach ($pizzas as $pizza) : // -- : -- instead of -- { -- 
+        ?>
 
             <div class="col s6 md3">
                 <div class="card z-depth-0">
@@ -43,11 +44,13 @@ mysqli_close($conn);
                         <h6><?php echo htmlentities($pizza['title']); ?></h6>
 
                         <ul>
-                            <?php foreach (explode(',', $pizza['ingredients']) as $ingredient) { ?>
+                            <?php foreach (explode(',', $pizza['ingredients']) as $ingredient) : // ` : ` instead of ` { `
+                            ?>
 
                                 <li><?php echo htmlentities($ingredient); ?></li>
 
-                            <?php }; ?>
+                            <?php endforeach; // --endforeach -- indead of -- { -- 
+                            ?>
                         </ul>
 
 
@@ -59,7 +62,8 @@ mysqli_close($conn);
                 </div>
             </div>
 
-        <?php }; ?>
+        <?php endforeach; // `endforeach` instead  of ` { `
+        ?>
 
     </div>
 </div>
