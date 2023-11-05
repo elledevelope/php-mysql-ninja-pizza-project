@@ -44,11 +44,22 @@ if (isset($_POST['submit'])) {
             $errors['ingredients'] = 'Ingredients must be a comma separated list';
         };
     };
+
+
+    //filter $errors array in search of errors:
+    if (array_filter($errors)) { //it checks $errors array at the beggining of a page: if it's return true (1) - there are errors:
+        echo 'errors in the form';
+    } else { //if it's return false (0)- it means there are no errors:
+        echo 'form is valid';
+    };
 };
-
-
-
 ?>
+
+
+
+
+
+
 
 
 
@@ -72,7 +83,7 @@ if (isset($_POST['submit'])) {
 
         <label>Ingredients (comma separated)</label>
         <input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients) ?>">
-			<div class="red-text"><?php echo $errors['ingredients']; ?></div>
+        <div class="red-text"><?php echo $errors['ingredients']; ?></div>
 
         <div class="center">
             <input class="btn brand z-depth-0" type="submit" name="submit" value="submit">
