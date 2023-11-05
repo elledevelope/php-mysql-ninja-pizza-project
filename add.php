@@ -63,10 +63,13 @@ if (isset($_POST['submit'])) {
         //inserting users unput into database via query:
         $sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title', '$email', '$ingredients')";
 
-
-        // echo 'form is valid';
-        header('Location:index.php'); //if there are no errors, we redirect user to index page
-        //later before redirecting we will send data from the form to database
+        //save unputs data to database and check:
+        if (mysqli_query($conn, $sql)) {
+            //success:
+            header('Location:index.php'); //if there are no errors, we redirect user to index page
+        } else {
+            echo 'query error: ' . mysqli_error($conn);
+        };
     };
 };
 ?>
