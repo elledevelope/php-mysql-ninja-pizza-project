@@ -16,6 +16,11 @@ $result = mysqli_query($conn, $sql);
 //fetch result in array format:
 $pizza = mysqli_fetch_assoc($result);
 
+//free $result from memory:
+mysqli_free_result($result);
+//close connection to database:
+mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
