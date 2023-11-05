@@ -59,6 +59,11 @@ if (isset($_POST['submit'])) {
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
 
+
+        //inserting users unput into database via query:
+        $sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title', '$email', '$ingredients')";
+
+
         // echo 'form is valid';
         header('Location:index.php'); //if there are no errors, we redirect user to index page
         //later before redirecting we will send data from the form to database
