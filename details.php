@@ -1,14 +1,13 @@
-
 <?php include 'models/Database.php' ?>
 
 <?php
 //check GET['id'] (GET request 'id' parameter):
-if(isset($_GET['id'])) { //if 'id' is present in the url
+if (isset($_GET['id'])) { //if 'id' is present in the url
 
- $id = mysqli_real_escape_string($conn, $_GET['id']);   //escaping any sensitive characters to protect our database
+    $id = mysqli_real_escape_string($conn, $_GET['id']);   //escaping any sensitive characters to protect our database
 
-//make sql:
-$sql = "SELECT * FROM pizzas WHERE id = $id"; // for btn "more info" we select any record ` WHERE id = $id ` (id in url)
+    //make sql:
+    $sql = "SELECT * FROM pizzas WHERE id = $id"; // for btn "more info" we select any record ` WHERE id = $id ` (id in url)
 };
 
 //get query result:
@@ -20,6 +19,7 @@ $pizza = mysqli_fetch_assoc($result);
 mysqli_free_result($result);
 //close connection to database:
 mysqli_close($conn);
+// print_r($pizza);
 
 ?>
 
@@ -27,8 +27,21 @@ mysqli_close($conn);
 <html lang="fr">
 <?php include 'templates/header.php' ?>
 
-<h2>Details</h2>
+<div class="container center">
+    <?php if ($pizza) : ?>
+        <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
+        <p>Created by: <?php echo htmlspecialchars($pizza['email']); ?></p>
+        <p> <?php echo date($pizza['created_at']); ?></p>
+        <h5>Ingredients:</h5>
+        <p><?php echo htmlspecialchars($pizza['ingredients']); ?></p>
+
+    <?php else : ?>
+        <h5>No such pizza exists</h5>
+
+    <?php endif; ?>
+
+</div>
 
 <?php include 'templates/footer.php' ?>
-</html>
 
+</html>
