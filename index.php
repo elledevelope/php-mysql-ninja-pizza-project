@@ -19,6 +19,10 @@ $result = mysqli_query($conn, $sql);
 //fetch the resulting rows as an array:
 $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+//free $results from memory:
+mysqli_free_result($result);
+
+
 print_r($pizzas);
 
 
