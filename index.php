@@ -65,6 +65,12 @@ mysqli_close($conn);
         <?php endforeach; // `endforeach` instead  of ` { `
         ?>
 
+        <?php if(count($pizzas) >= 3) : // `:` instead  of ` { ` ?>
+            <p> <?php echo 'there are 2 or more pizzas' ?></p>
+        <?php else : // `:` instead  of ` } else { `?>
+            <p><?php echo 'there are less than 3 pizzas' ?></p>
+            <?php endif; //`endif` instead  of ` { `  ?>
+
     </div>
 </div>
 
