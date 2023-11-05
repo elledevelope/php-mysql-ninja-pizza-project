@@ -48,9 +48,12 @@ if (isset($_POST['submit'])) {
 
     //filter $errors array in search of errors:
     if (array_filter($errors)) { //it checks $errors array at the beggining of a page: if it's return true (1) - there are errors:
-        echo 'errors in the form';
+        // echo 'errors in the form';
+
     } else { //if it's return false (0)- it means there are no errors:
-        echo 'form is valid';
+        // echo 'form is valid';
+        header('Location:index.php'); //if there are no errors, we redirect user to index page
+        //later before redirecting we will send data from the form to database
     };
 };
 ?>
