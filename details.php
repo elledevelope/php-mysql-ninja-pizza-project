@@ -9,8 +9,12 @@ if(isset($_GET['id'])) { //if 'id' is present in the url
 
 //make sql:
 $sql = "SELECT * FROM pizzas WHERE id = $id"; // for btn "more info" we select any record ` WHERE id = $id ` (id in url)
-
 };
+
+//get query result:
+$result = mysqli_query($conn, $sql);
+//fetch result in array format:
+$pizza = mysqli_fetch_assoc($result);
 
 ?>
 
