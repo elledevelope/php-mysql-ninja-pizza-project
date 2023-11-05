@@ -22,6 +22,9 @@ $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 //free $results from memory:
 mysqli_free_result($result);
 
+//close connection to database:
+mysqli_close($conn);
+
 
 print_r($pizzas);
 
