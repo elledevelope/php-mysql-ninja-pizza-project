@@ -1,3 +1,5 @@
+<?php include 'models/Database.php' ?>
+
 <?php
 //we initilaze variables to use them later in <input "value = $..."> to keep data in forl fiels after subbmitting a form if there is an error:
 $email = $title = $ingredients = ''; //$email, $title, and $ingredients are being simultaneously initialized to empty strings
@@ -51,6 +53,12 @@ if (isset($_POST['submit'])) {
         // echo 'errors in the form';
 
     } else { //if it's return false (0)- it means there are no errors:
+
+        //Sanitaze users inputs:
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
         // echo 'form is valid';
         header('Location:index.php'); //if there are no errors, we redirect user to index page
         //later before redirecting we will send data from the form to database
