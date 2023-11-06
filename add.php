@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
 
     <h4 class="center">Add a Pizza</h4>
 
-    <form class="white" action="add.php" method="POST">
+    <form class="white" action=<?php echo $_SERVER['PHP_SELF'] ?> method="POST"> <!-- instead of action = "add.php" we use superglobal $_SERVER['PHP_SELF'] that give a curent file name, so we can rename a file and form still will continue to work -->
         <label>Your Email:</label>
         <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>"> <!-- //added $email to value of input to keep data in a filed after a form submition if here is an error so a user can modifie this data rather than typing it out again -->
         <div class="red-text"><?php echo $errors['email'] ?></div> <!-- //echoed $errors['email'] in html -->
