@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the source code and materials for the PHP and MySQL tutorial series that I followed on YouTube. The tutorial series is hosted by [@iamshaunjp](https://github.com/iamshaunjp), and you can find the specific video playlist I followed here: [PHP Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gksOX3Kd9KPo-O68ncT05o).
+This repository contains the source code and materials for the PHP and MySQL tutorial series that I followed on YouTube. The tutorial series is hosted by [Shaun (Net Ninja)](https://github.com/iamshaunjp), and you can find the specific video playlist I followed here: [PHP Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gksOX3Kd9KPo-O68ncT05o).
 
 
 ## Table of contents
@@ -84,7 +84,7 @@ The tutorial is divided into multiple sections, each focusing on a specific aspe
 
 
 ## What I learned
-This PHP and MySQL tutorial, crafted by [@iamshaunjp](@https://github.com/iamshaunjp), has been my gateway to a comprehensive learning experience. Throughout the course, I immersed myself in the basics of PHP, starting from the ground up and applying my newfound knowledge to construct a "Ninja Pizza" website. The tutorial thoughtfully explores the seamless integration of a MySQL database, empowering me to efficiently store and retrieve data using SQL. Key concepts such as handling forms (POST, GET, etc.), validating data, and redirecting users were thoroughly covered, providing me with a well-rounded understanding of PHP and MySQL. 🍕📊💡
+This PHP and MySQL tutorial, crafted by [Shaun (Net Ninja)](@https://github.com/iamshaunjp), has been my gateway to a comprehensive learning experience. Throughout the course, I immersed myself in the basics of PHP, starting from the ground up and applying my newfound knowledge to construct a "Ninja Pizza" website. The tutorial thoughtfully explores the seamless integration of a MySQL database, empowering me to efficiently store and retrieve data using SQL. Key concepts such as handling forms (POST, GET, etc.), validating data, and redirecting users were thoroughly covered, providing me with a well-rounded understanding of PHP and MySQL. 🍕📊💡
 
 
 ## Author
@@ -100,4 +100,4 @@ Let's connect! 📫 [elledevelope@gmail.com]
 
 ## Acknowledgements
 
- - [@iamshaunjp](@https://github.com/iamshaunjp) for providing the excellent tutorial series 🙌
+ - [Shaun (Net Ninja)](@https://github.com/iamshaunjp) for providing the excellent tutorial series 🙌
