@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the source code and materials for the PHP and MySQL tutorial series that I followed on YouTube. The tutorial series is hosted by [@Shaun (Net Ninja) ](@https://github.com/iamshaunjp), and you can find the specific video playlist I followed here: [PHP Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gksOX3Kd9KPo-O68ncT05o).
+This repository contains the source code and materials for the PHP and MySQL tutorial series that I followed on YouTube. The tutorial series is hosted by [@Shaun](@https://github.com/iamshaunjp), and you can find the specific video playlist I followed here: [PHP Tutorial for Beginners](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gksOX3Kd9KPo-O68ncT05o).
 
 
 ## Table of contents
@@ -100,4 +100,4 @@ Let's connect! 📫 [elledevelope@gmail.com]
 
 ## Acknowledgements
 
- - [@Shaun (Net Ninja) ](@https://github.com/iamshaunjp) for providing the excellent tutorial series 🙌
+ - [@Shaun](@https://github.com/iamshaunjp) for providing the excellent tutorial series 🙌
