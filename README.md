@@ -1,4 +1,4 @@
-# PHP_and_MySQL: ninja_pizza_project 🍕🥷💻
+# PHP︱MySQL: Ninja Pizza Project 🍕🥷💻
 
 ## Overview
 
@@ -12,12 +12,13 @@ This repository contains the source code and materials for the PHP and MySQL tut
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Sections](#sections)
+- [License](#license)
 - [What I learned](#what-i-learned)
 - [Author](#author)
 - [Acknowledgements](#acknowledgements)
 
 
-## Screenshoots
+## Screenshots
 
 ![Design preview: main page Ninja pizza](/img/screenshoots/ninja-pizza-main-page.png)
 
@@ -81,6 +82,9 @@ The tutorial is divided into multiple sections, each focusing on a specific aspe
     Section 5: Connecting PHP to MySQL
         Establishing a connection
         Executing queries from PHP
+
+## License
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 ## What I learned
